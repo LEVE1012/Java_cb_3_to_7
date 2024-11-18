@@ -1,5 +1,4 @@
 public abstract class Geometric {
-
     // 属性：颜色和是否填充
     private String color;
     private boolean filled;
@@ -184,9 +183,7 @@ class Triangle extends Geometric {
         this.side2 = side2;
         this.side3 = side3;
     }
-
     
-
     // 获取side1
     public double getSide1() {
         return side1;
@@ -243,8 +240,4 @@ class Triangle extends Geometric {
     public String toString() {
         return "Triangle[side1=" + side1 + ", side2=" + side2 + ", side3=" + side3 + ", color=" + getColor() + ", filled=" + isFilled() + "]";
     }
-    
-
-    
-
 }
