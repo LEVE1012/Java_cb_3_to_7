@@ -47,6 +47,20 @@ public abstract class Geometric {
     public String toString() {
         return "Geometric[color=" + color + ", filled=" + filled + "]";
     }
+    
+    public static void main(String[] args) {
+        // 创建 Circle 对象
+        Circle circle = new Circle(5);
+        System.out.println(circle);
+
+        // 创建 Rectangle 对象
+        Rectangle rectangle = new Rectangle(2, 4);
+        System.out.println(rectangle);
+
+        // 创建 Triangle 对象
+        Triangle triangle = new Triangle(3, 4, 5);
+        System.out.println(triangle);
+    }
 }
 
 // Circle 类
@@ -93,6 +107,7 @@ class Circle extends Geometric {
     public String toString() {
         return "Circle[radius=" + radius + ", area=" + getArea() + ", perimeter=" + getPerimeter() + "]";
     }
+
 }
 
 // Rectangle 类
@@ -146,9 +161,10 @@ class Rectangle extends Geometric {
     public String toString() {
         return "Rectangle[side1=" + side1 + ", side2=" + side2 + ", area=" + getArea() + ", perimeter=" + getPerimeter() + "]";
     }
+    
 }
 
-public class Triangle extends Geometric {
+class Triangle extends Geometric {
 
     // 属性：三条边
     private double side1;
@@ -169,13 +185,7 @@ public class Triangle extends Geometric {
         this.side3 = side3;
     }
 
-    // 带颜色和填充的构造方法
-    public Triangle(double side1, double side2, double side3, String color, boolean filled) {
-        super(color, filled);
-        this.side1 = side1;
-        this.side2 = side2;
-        this.side3 = side3;
-    }
+    
 
     // 获取side1
     public double getSide1() {
@@ -233,26 +243,8 @@ public class Triangle extends Geometric {
     public String toString() {
         return "Triangle[side1=" + side1 + ", side2=" + side2 + ", side3=" + side3 + ", color=" + getColor() + ", filled=" + isFilled() + "]";
     }
+    
 
-    // 测试类
-    public static void main(String[] args) {
-        // 创建并测试 Triangle 对象
-        Triangle triangle = new Triangle(3, 4, 5, "red", true);
-        System.out.println(triangle);
-        System.out.println("Area: " + triangle.getArea());
-        System.out.println("Perimeter: " + triangle.getPerimeter());
-        System.out.println("Is valid triangle: " + triangle.isTriangle());
+    
 
-        // 创建并测试 Rectangle 对象
-        Rectangle rectangle = new Rectangle(2, 4, "blue", false);
-        System.out.println(rectangle);
-        System.out.println("Area: " + rectangle.getArea());
-        System.out.println("Perimeter: " + rectangle.getPerimeter());
-
-        // 创建并测试 Circle 对象
-        Circle circle = new Circle(5, "green", true);
-        System.out.println(circle);
-        System.out.println("Area: " + circle.getArea());
-        System.out.println("Perimeter: " + circle.getPerimeter());
-    }
 }
